@@ -1,31 +1,28 @@
-# Module 12 Report Template
+# Credit Risk Report
 
-## Overview of the Analysis
+The purpose of this report is to predict the risk of loans based on past lending history. The dataset contains loan size, interest rate, borrower income, debt income, number of accounts, derogatory marks, and total debt.
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
-
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+* We used TrainTestSplit to split the data into testing and training sets
+*  The loan status column indicates if a loan is either a healthy loan (0 value) or has a high risk of defaulting (1 value)
+* Created a Logistic Regression Model with the original data to predict both health and high-risk loans 
+* We resampled the data using RandomOverSampler then built a new Logistic Regression Model that was used to predict both health and high-risk loans
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+Machine Learning Model 1:
+  * Accuracy : 99%
+  * Precision : [(Healthy Loan, 1.00), (High-Risk Loan, .87)]
+  * Recall : [(Healthy Loan, 1.00), (High_Risk Loan, .89)]
 
 
 
 * Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+  * Accuracy : 99%
+  * Precision : [(Healthy Loan, 1.00) (High_Risk Loan, .87)]
+  * Recall : [(Healthy Loan, 1.00) (High_Risk Loan, 1.00)]
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
+* The second Logistic regression model with the oversampled data was better at making predictions.
+* In conclusion, the regrsession model with the oversampled data would be bteer to use in a real world case, would much rather have it error on the side of healthy loans and have a really high recall and precision on high-risk loans
